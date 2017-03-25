@@ -64,3 +64,8 @@ address{
   margin: 0;
   color: #0f0f0f;
 }
+
+div.breadcrumb{
+  background: lightgrey;
+  border-radius: 0;
+}
