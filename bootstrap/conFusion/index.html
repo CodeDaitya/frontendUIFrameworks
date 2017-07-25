@@ -30,7 +30,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="index.html" class="navbar-brand">Ristorant con Fusion</a>
+          <a href="index.html" class="navbar-brand"><img src="img/logo.png" height="30" width="41"></a>
 
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#navbar" aria-expanded="false" aria-control="navbar">
@@ -45,12 +45,12 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"
               aria-hidden="true">
-            </span>&nbspHome</a>
+            </span> Home</a>
             </li>
-            <li><a href="aboutus.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbspAbout</a></li>
+            <li><a href="aboutus.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
               role="button" aria-haspopup="true" aria-expanded="false">
-              Menu
+              <span class="glyphicon glyphicon-list-alt"></span> Menu
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Appetizers</a></li>
@@ -63,17 +63,133 @@
                 <li><a href="#">Weekend Brunch</a></li>
               </ul>
             </li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contactus.html"><i class="fa fa-envelope-o"> Contact</i></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Login</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-inline" id="signin">
+              <div class="form-group">
+                <label class="sr-only" for="mail">Email</label>
+                <input type="email" class="form-control input-sm" id="mail" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="pass">Password</label>
+                <input type="password" class="form-control input-sm" id="pass" placeholder="Password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="approve" value=""><span style="color:#000;">Remember Me</span>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-info btn-sm">Sign In</button>
+              <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="reserveModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Reserve a Table</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <strong class="col-sm-2">  Number Of Guests</strong>
+                <div class="col-sm-10">
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats1" value="1"> 1
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats2" value="2"> 2
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats3" value="3"> 3
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats4" value="4"> 4
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats5" value="5"> 5
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats6" value="6"> 6
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <strong class="col-sm-2">Section</strong>
+                <div class="btn-group col-sm-10" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="checkbox" autocomplete="off" name="non-Smoking" checked>Non-Smoking
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="checkbox" autocomplete="off" name="smoking">Smoking
+                  </label>
+                </div>
+              </div>
+              <div class="form-group has-feedback">
+                <label for="datetime" class="col-sm-2">Date and Time</label>
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <input type="date" id="datetime" name="date" class="form-control" placeholder="Date">
+                      <span><i class="glyphicon glyphicon-calendar form-control-feedback"></i></span>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1">
+                      <input type="time" id="datetime" name="time" class="form-control" placeholder="Time">
+                      <span><i class="glyphicon glyphicon-time form-control-feedback"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2 col-sm-offset-2">
+                  <button type="submit" class="btn btn-primary">Reserve</button>
+                </div>
+                <div class="col-sm-2">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><span>Cancel</span></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                  <div class="alert alert-dismissible alert-warning" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning</strong>: Please <a href="tel:+85212345678"><strong class="text-warning">call</strong></a> us to reserve more than six guests.
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <header class="jumbotron">
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
         <div class="row row-header">
-          <div class="col-xs-12 col-sm-8">
+          <div class="col-lg-8">
             <h1>Ristorante con Fusion</h1>
             <p style="padding:40px;"></p>
             <p>
@@ -83,14 +199,81 @@
             </p>
           </div>
 
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-lg-2 col-xs-offset-2 col-sm-offset-4 col-lg-offset-0">
+            <p style="padding:20px"></p>
+            <img class="img-responsive" src="img/logo.png">
+          </div>
+          <div class="col-lg-2">
+            <p style="padding: 40px"></p>
+            <a id="reserveTable" type="button" class="btn btn-warning btn-block">Reserve Table</a>
           </div>
         </div>
       </div>
     </header>
 
     <div class="container">
-      <div class="row">
+      <div class="row row-content">
+        <div class="col-xs-12">
+          <div id="mycarousel" class="carousel slide" data-ride="carousel">
+           <ol class="carousel-indicators">
+              <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#mycarousel" data-slide-to="1"></li>
+              <li data-target="#mycarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="img-responsive" src="img/uthapizza.png" alt="Uthapizza">
+                <div class="carousel-caption">
+                  <h2>
+                    Uthapizza
+                    <span class="label label-danger label-xs">HOT</span>
+                    <span class="badge">$4.99</span>
+                  </h2>
+                  <p>A unique combination of Indian Uthappam (pancake) and Italian pizza,topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.
+                  </p>
+                  <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="img/buffet.png" alt="Weekend Grand Buffet">
+                <div class="carousel-caption">
+                  <h2>
+                    Weekend's Grand Buffet
+                    <span class="label label-danger label-xs">NEW</span>
+                  </h2>
+                  <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person
+                  </p>
+                  <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="img/alberto.png" alt="Alberto Somayya">
+                <div class="carousel-caption">
+                  <h3 align="center">Alberto Somayya</h3>
+                  <h4>Executive Chef</h4>
+                  <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences.
+                  </p>
+                  <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <div class="btn-group" id="carouselButtons">
+            <div class="btn btn-danger btn-sm" id="carousel-pause"><span class="fa fa-pause"></span></div>
+            <div class="btn btn-danger btn-sm" id="carousel-play"><span class="fa fa-play"></span></div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="row" style="padding-bottom:100px">
         <div class="col-xs-12 col-sm-12">
           <ol class="breadcrumb">
             <li class="active">Home</li>
@@ -98,58 +281,154 @@
             <li><a href="#">Contact</a></li>
           </ol>
         </div>
-      </div>
+      </div>-->
       <div class="row row-content">
         <div class="col-xs-12 col-sm-3 col-sm-push-9">
-          <p style="padding:20px;"></p>
           <h3 align="center">Our Lipsmacking Culinary Creations</h3>
         </div>
 
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-          <h2>Uthappizza</h2>
-          <p>A unique combination of Indian Uthappam (pancake)
-            and Italian pizza, topped with Cerignola olives,
-            ripe vine cherry tomatoes, Vidalia onion, Guntur
-            chillies and Buffalo Paneer.
-          </p>
-          <p><a href="#">More �</a></p>
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#"><img class="media-object img-thumbnail" src="img/uthapizza.png" alt="Uthapizza"></a>
+            </div>
+            <div class="media-body">
+              <h2 class="media-heading">Uthapizza
+                <span class="label label-danger label-xs">HOT</span>
+                <span class="badge">$4.99</span>
+              </h2>
+              <p>A unique combination of Indian Uthappam (pancake) and Italian pizza,topped with Cerignola olives, ripe vine
+                  cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.
+              </p>
+              <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row row-content">
         <div class="col-xs-12 col-sm-3">
-          <p style="padding:20px;"></p>
           <h3 align="center">This Month's Promotions</h3>
         </div>
 
         <div class="col-xs-12 col-sm-9">
-          <h2>Weekend Grand Buffet</h2>
-          <p>Featuring mouthwatering combinations with a
-            choice of five different salads, six enticing appetizers,
-            six main entrees and five choicest desserts. Free flowing
-            bubbly and soft drinks. All for just $19.99 per person
-          </p>
-          <p><a href="#">More �</a></p>
+          <div class="media">
+            <div class="media-body">
+              <h2 class="media-heading">Weekend Grand Buffet
+                <span class="label label-danger label-xs">New</span>
+              </h2>
+              <p>Featuring mouthwatering combinations with a
+                choice of five different salads, six enticing appetizers,
+                six main entrees and five choicest desserts. Free flowing
+                bubbly and soft drinks. All for just $19.99 per person
+              </p>
+              <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+            </div>
+            <div class="media-right media-middle">
+              <a href="#"><img class="media-object img-thumbnail" src="img/buffet.png" alt="Weekend Grand Buffet"></a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row row-content">
         <div class="col-xs-12 col-sm-3 col-sm-push-9">
-          <p style="padding:20px;"></p>
           <h3 align="center">Meet our Culinary Specialists</h3>
         </div>
 
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-          <h2>Alberto Somayya</h2>
-          <h4>Executive Chef</h4>
-          <p>Award winning three-star Michelin chef with wide
-            International experience having worked closely with
-            whos-who in the culinary world, he specializes in
-            creating mouthwatering Indo-Italian fusion experiences.
-          </p>
-          <p><a href="#">More �</a></p>
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+              <img class="media-object img-thumbnail"
+                src="img/alberto.png" alt="Alberto Somayya">
+              </a>
+            </div>
+            <div class="media-body">
+              <h2 class="media-heading">Alberto Somayya</h2>
+              <h4>Executive Chef</h4>
+              <p>Award winning three-star Michelin chef with wide
+                International experience having worked closely with
+                whos-who in the culinary world, he specializes in
+                creating mouthwatering Indo-Italian fusion experiences.
+                </p>
+              <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+            </div>
+          </div>
         </div>
       </div>
+     <!--  <div class="row" id="reservetable" style="padding-top:40px">
+        <div class="col-xs-12 col-sm-3">
+          <h2 style="margin-top:17%"><strong>Reserve a Table</strong></h2>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <strong class="col-sm-2">  Number Of Guests</strong>
+              <div class="col-sm-10">
+                <label class="radio-inline">
+                  <input type="radio" name="seat" id="seats1" value="1"> 1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="seats" id="seats2" value="2"> 2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="seats" id="seats3" value="3"> 3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="seat" id="seats4" value="4"> 4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="seats" id="seats5" value="5"> 5
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="seats" id="seats6" value="6"> 6
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <strong class="col-sm-2"> Section</strong>
+              <div class="btn-group col-sm-10" data-toggle="buttons">
+                <label class="btn btn-success">
+                  <input type="checkbox" autocomplete="off">Non-Smoking
+                </label>
+                <label class="btn btn-danger">
+                  <input type="checkbox" autocomplete="off">Smoking
+                </label>
+              </div>
+            </div>
+            <div class="form-group has-feedback">
+              <label for="datetime" class="col-sm-2">Date and Time</label>
+              <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input type="date" id="datetime" name="date" class="form-control" placeholder="Date">
+                    <span><i class="glyphicon glyphicon-calendar form-control-feedback"></i></span>
+                  </div>
+                  <div class="col-sm-4 col-sm-offset-1">
+                    <input type="time" id="datetime" name="time" class="form-control" placeholder="Time">
+                    <span><i class="glyphicon glyphicon-time form-control-feedback"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-2 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary">Reserve</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <div class="alert alert-dismissible alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <strong>Warning</strong>: Please <a href="tel:+85212345678"><strong class="text-warning">call</strong></a> us to reserve more than six guests.
+                </div>
+              </div>
+            </div>
+            <div><p style="padding:40px"></p></div>
+          </form>
+        </div>
+      </div> -->
     </div>
 
     <footer class="row-footer">
@@ -201,5 +480,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript">
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>-->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#mycarousel').carousel({interval:2000});
+
+        $('#carousel-pause').click(function(){
+          $('#mycarousel').carousel('pause');
+        });
+
+        $('#carousel-play').click(function(){
+          $('#mycarousel').carousel('cycle');
+        });
+
+        $('#login').click(function(){
+          $('#loginModal').modal('toggle');
+        });
+        $('#reserveTable').click(function(){
+          $('#reserveModal').modal('toggle')
+        });
+      });
+    </script>
   </body>
 </html>
